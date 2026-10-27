@@ -1,0 +1,61 @@
+{
+	"name": "Bronze_DemandaParadas_CSV",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_ADLS_Transporte",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Bronze/CSV"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "demanda_paradas.csv",
+				"folderPath": "datos_csv",
+				"fileSystem": "raw"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "fec_servicio",
+				"type": "String"
+			},
+			{
+				"name": "cod_ruta",
+				"type": "String"
+			},
+			{
+				"name": "nro_parada",
+				"type": "String"
+			},
+			{
+				"name": "franja",
+				"type": "String"
+			},
+			{
+				"name": "abordajes_manuales",
+				"type": "String"
+			},
+			{
+				"name": "descensos_manuales",
+				"type": "String"
+			},
+			{
+				"name": "demanda_no_atendida",
+				"type": "String"
+			},
+			{
+				"name": "medicion",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
